@@ -1,0 +1,63 @@
+PSEUDO CODE
+
+add()-
+  1) Get text from the input and store that to var toDo
+
+  2)select our toDoList ul
+
+  3)create a new line and insert var toDo using prepend() and make sure to add our edit and remove buttons
+
+  4) clear text from input
+
+  5)Run adjustTotal(1) (making sure to add)
+
+
+edit()-
+  1) Select todo item by using $(this).parent().find("toDoItem")
+
+  2)Get text from the todo item $.text() make sure the item itself is wrapped in a class in addition to the li and store to a variable called editToDoText.
+
+  3)Replace text with input in the same position $.html
+
+  4)
+
+removeItem()-
+
+  1) Select todo list item using $(this).parent()
+
+  2) Remove the list item using $.remove()
+
+  3) Run adjustTotal(-1) and make sure it is dropping by 1
+
+adjustTotal(trueOrFalse)-
+
+  1) Get Current Total
+
+  2)  Check to see if upOrDown is true, IF true add 1 to variable total
+
+  3) ELSE, subtract 1 from variable total
+
+  4) Change the toDo count in our HTML to the updated total using $.text() or $.html()
+
+markAsDone()-
+  1) Select todo item by using _ $(this)
+
+  2)Add a class to the todo item using $.addClass()
+  3) run adjustTotal(-1)
+
+clearAll()-
+  1)Select all list item $('li')
+
+  2) Remove all of those using $.remove()
+
+  3) Run adjustTotal(0)
+
+clearDone()-
+
+  1) Select all list items with the done class
+  2) remove all of those using $.remove()
+
+saveEdits()-
+  1) This should fire when you click on another todo item or hti enter in editing mode.
+
+  2)Update the toDoItem with the contents in editTodoText using $.text() or $.html()
